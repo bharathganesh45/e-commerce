@@ -28,7 +28,7 @@ function Signup() {
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    const newvalue = type == "checkbox" ? checked : value;
+    const newvalue = type === "checkbox" ? checked : value;
 
     setFormValues({
       ...formValues,
@@ -74,7 +74,7 @@ function Signup() {
         }
         break;
 
-      case "confirmpassword":
+      case "confirmPassword":
         if (value !== formValues.password) {
           errorMessage = "Password do not match";
         }
@@ -148,7 +148,7 @@ function Signup() {
                 value={formValues.lastName}
                 onChange={handleChange}
                 isInvalid={!!formErrors.lastName}
-                 className={getValidationClass("lastname")}
+                 className={getValidationClass("lastName")}
               />
 
               <Form.Control.Feedback type="invalid">
